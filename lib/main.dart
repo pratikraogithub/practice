@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.aBeeZee().fontFamily,
       ),
       darkTheme: ThemeData(brightness: Brightness.dark),
-      initialRoute: "/",
+      debugShowCheckedModeBanner: false, //removes the debug label
+      initialRoute: MyRoute.homeRoute,
       routes: {
         "/": (context) => Loginpage(),
         MyRoute.homeRoute: (context) => homepage(),
