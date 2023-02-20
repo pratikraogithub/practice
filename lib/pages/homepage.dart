@@ -32,16 +32,45 @@ class _homepageState extends State<homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Catalog Aap"),
+        title: Text("Catalog App"),
       ),
       body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: (catalogModel.items != null && catalogModel.items.isNotEmpty)
-              ? ListView.builder(
+              ? GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 15,
+                    crossAxisSpacing: 15,
+                  ),
+                  itemBuilder: (context, index) {
+                    final item = catalogModel.items[index];
+                    return Card(
+                        clipBehavior: Clip.antiAlias,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: GridTile(
+                          header: Container(
+                            child: Text(
+                              item.name,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            padding: EdgeInsets.all(11),
+                            decoration: BoxDecoration(color: Colors.deepOrange),
+                          ),
+                          child: Image.network(item.image),
+                          footer: Container(
+                            child: Text(
+                              item.price.toString(),
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            padding: EdgeInsets.all(11),
+                            decoration: BoxDecoration(color: Colors.black87),
+                          ),
+                        ));
+                  },
                   itemCount: catalogModel.items.length,
-                  itemBuilder: (context, index) => ItemWidget(
-                        item: catalogModel.items[index],
-                      ))
+                )
               : Center(
                   child: CircularProgressIndicator(),
                 )),
