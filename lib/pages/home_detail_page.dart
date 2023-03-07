@@ -17,7 +17,9 @@ class homeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: Mytheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -34,8 +36,8 @@ class homeDetailPage extends StatelessWidget {
                   StadiumBorder(),
                 ),
               ),
-              child: "Buy".text.make(),
-            ).wh(100, 50),
+              child: "Add to Cart".text.make(),
+            ).wh(120, 50),
           ],
         ).p32(),
       ),
@@ -60,8 +62,13 @@ class homeDetailPage extends StatelessWidget {
                     catalog.name.text.xl4.color(Mytheme.darkBluish).make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                     10.heightBox,
+                    "Manteles tierra de abierta los algodón muelles viva huevos veces de. Que cosas escobazos pies pero bajo pies desnudo que, sillas me encuentro faraón viciosa, mudas arroyo y duro huido vuelve que los es con. Dando muertos loca árboles los, las pasan nadadora consume criaturas la desangradas, lenta de las."
+                        .text
+                        .textStyle(context.captionStyle)
+                        .make()
+                        .p16()
                   ],
-                ).py64(),
+                ).py32(),
               ),
             ))
           ],

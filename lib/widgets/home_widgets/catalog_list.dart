@@ -71,13 +71,13 @@ class CatalogItem extends StatelessWidget {
                       StadiumBorder(),
                     ),
                   ),
-                  child: "Buy".text.make(),
+                  child: "Add to Cart".text.make(),
                 ),
               ],
             ).pOnly(right: 8.0),
           ],
         ))
       ],
-    )).white.rounded.square(150).make().py16();
+    )).white.rounded.square(180).make().py16();
   }
 }
