@@ -20,9 +20,9 @@ class homeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: Mytheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.all(0),
@@ -31,7 +31,8 @@ class homeDetailPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Mytheme.darkBluish),
+                backgroundColor:
+                    MaterialStateProperty.all(context.theme.buttonColor),
                 shape: MaterialStateProperty.all(
                   StadiumBorder(),
                 ),
@@ -55,18 +56,18 @@ class homeDetailPage extends StatelessWidget {
               arcType: VxArcType.CONVEY,
               edge: VxEdge.TOP,
               child: Container(
-                color: Colors.white,
+                color: context.cardColor,
                 width: context.screenWidth,
                 child: Column(
                   children: [
-                    catalog.name.text.xl4.color(Mytheme.darkBluish).make(),
+                    catalog.name.text.xl4.color(context.accentColor).make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                     10.heightBox,
                     "Manteles tierra de abierta los algodón muelles viva huevos veces de. Que cosas escobazos pies pero bajo pies desnudo que, sillas me encuentro faraón viciosa, mudas arroyo y duro huido vuelve que los es con. Dando muertos loca árboles los, las pasan nadadora consume criaturas la desangradas, lenta de las."
                         .text
                         .textStyle(context.captionStyle)
                         .make()
-                        .p16()
+                        .p16(),
                   ],
                 ).py32(),
               ),
